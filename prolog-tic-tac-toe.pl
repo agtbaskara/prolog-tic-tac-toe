@@ -32,6 +32,7 @@ mark(A,B):-
     check_winner(A).
 
 check_winner(A):-
+    A \== state,
     get_winner(A),
     writeln(""),
     write("Player "),
@@ -39,6 +40,7 @@ check_winner(A):-
     write(" is winning the game !").
 
 get_winner(A):-
+    A \== state,
     at(A, 1), at(A, 2), at(A, 3);
     at(A, 4), at(A, 5), at(A, 6);
     at(A, 7), at(A, 8), at(A, 9);
